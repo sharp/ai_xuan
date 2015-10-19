@@ -1,0 +1,20 @@
+.page-header
+  %h3
+    <%= human_name.capitalize %> <%%= @<%= singular_table_name %>.id %>
+
+.table.table-bordered
+<% @attributes.each do |attribute| -%>
+  <tr>
+    <td>= attribute.human_name :</td>
+    <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+  </tr>
+<% end -%>
+
+<% unless options[:read_only] -%>
+  <tr>
+    <td>
+      Actions
+    <td>
+      = link_to "Edit", edit_admin_<%= singular_table_name %>_path(@<%= singular_table_name %>), :class => "btn btn-default"
+      = link_to("Delete", admin_<%= singular_table_name %>_path(@<%= singular_table_name %>), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => "btn btn-danger")
+<% end -%>

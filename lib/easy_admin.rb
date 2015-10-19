@@ -1,0 +1,2 @@
+module EasyAdmin
+end
