@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_admin (0.0.1)
+    sharp_admin (0.0.1)
       haml
       rails (~> 4.2.4)
 
@@ -106,7 +106,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  easy_admin!
+  sharp_admin!
   sqlite3
 
 BUNDLED WITH

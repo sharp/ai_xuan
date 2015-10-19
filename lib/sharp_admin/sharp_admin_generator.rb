@@ -1,7 +1,7 @@
 require 'rails/generators/resource_helpers'
 require 'rails/generators/named_base'
 
-class EasyAdminGenerator < Rails::Generators::NamedBase
+class SharpAdminGenerator < Rails::Generators::NamedBase
 
   include Rails::Generators::ResourceHelpers
 

@@ -1,13 +1,13 @@
 require 'test_helper'
 
 
-require 'easy_admin/easy_admin_generator'
+require 'sharp_admin/sharp_admin_generator'
 
-class EasyAdminGeneratorTest < Rails::Generators::TestCase
+class SharpAdminGeneratorTest < Rails::Generators::TestCase
 
   destination File.expand_path("../tmp", File.dirname(__FILE__))
   setup :prepare_destination
-  tests EasyAdminGenerator
+  tests SharpAdminGenerator
 
   test "create the controllers and specs" do
     run_generator %w(User --search_by email)
