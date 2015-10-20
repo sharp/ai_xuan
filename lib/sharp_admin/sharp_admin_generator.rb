@@ -13,43 +13,45 @@ class SharpAdminGenerator < Rails::Generators::NamedBase
 
   class_option :read_only, :type => :boolean, :default => false, :desc => "Omit create, edit and update functionality."
 
+  class_option :ns, :type => :string, :default => 'admin', :desc => "the namespace of admin"
+
   def create_base_controller
-    empty_directory "app/controllers/admin"
-    path = File.join("app/controllers/admin", "base_controller.rb")
+    empty_directory "app/controllers/#{options[:ns]}"
+    path = File.join("app/controllers/#{options[:ns]}", "base_controller.rb")
     template("base_controller.rb", path) unless File.exists?(path)
   end
 
   def create_base_controller_spec
-    empty_directory "spec/controllers/admin"
-    path = File.join("spec/controllers/admin", "base_controller_spec.rb")
+    empty_directory "spec/controllers/#{options[:ns]}"
+    path = File.join("spec/controllers/#{options[:ns]}", "base_controller_spec.rb")
     template("base_controller_spec.rb", path) unless File.exists?(path)
   end
 
   def create_controller
     @attributes_symbols = get_model_columns.dup.delete_if {|attribute| ['id', 'created_at', 'updated_at'].include? attribute.name }.collect {|attribute| ":#{attribute.name}" }
-    template "controller.rb", File.join("app/controllers/admin", "#{controller_file_name}_controller.rb")
+    template "controller.rb", File.join("app/controllers/#{options[:ns]}", "#{controller_file_name}_controller.rb")
   end
 
   def create_controller_rspec
-    template "controller_spec.rb", File.join("spec/controllers/admin", "#{controller_file_name}_controller_spec.rb")
+    template "controller_spec.rb", File.join("spec/controllers/#{options[:ns]}", "#{controller_file_name}_controller_spec.rb")
   end
 
   def create_helper
-    empty_directory "app/helpers/admin"
-    template "base_helper.rb", File.join("app/helpers/admin", "base_helper.rb")
+    empty_directory "app/helpers/#{options[:ns]}"
+    template "base_helper.rb", File.join("app/helpers/#{options[:ns]}", "base_helper.rb")
   end
 
   def create_views
-    empty_directory "app/views/admin/#{controller_file_name}"
+    empty_directory "app/views/#{options[:ns]}/#{controller_file_name}"
     @attributes = get_model_columns
     available_views.each do |view|
-      template "views/#{view}.html.erb", File.join("app/views/admin", controller_file_name, "#{view}.html.haml")
+      template "views/#{view}.html.erb", File.join("app/views/#{options[:ns]}", controller_file_name, "#{view}.html.haml")
     end
   end
 
   def add_resource_route
     return if not File.exists?("config/routes.rb")
-    route_config =  "namespace :admin do "
+    route_config =  "namespace #{options[:ns]}.to_sym do "
     route_config << "resources :#{file_name.pluralize}"
     route_config << " end"
     route route_config

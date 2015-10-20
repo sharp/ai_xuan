@@ -24,6 +24,20 @@ class SharpAdminGeneratorTest < Rails::Generators::TestCase
     assert_file "app/helpers/admin/base_helper.rb", /def sortable/
   end
 
+  test "-ns option with namespace" do
+    run_generator %w(User --ns namespace)
+    assert_file "app/controllers/namespace/base_controller.rb", /class Admin::BaseController < ApplicationController/
+    assert_file "app/controllers/namespace/users_controller.rb", /class Admin::UsersController < Admin::BaseController/
+    assert_file "spec/controllers/namespace/base_controller_spec.rb", /describe Admin::BaseController do/
+    assert_file "spec/controllers/namespace/users_controller_spec.rb", /describe Admin::UsersController do/
+    assert_file "app/views/namespace/users/index.html.haml"
+    assert_file "app/views/namespace/users/show.html.haml"
+    assert_file "app/views/namespace/users/new.html.haml"
+    assert_file "app/views/namespace/users/edit.html.haml"
+    assert_file "app/views/namespace/users/_form.html.haml"
+    assert_file "app/helpers/namespace/base_helper.rb", /def sortable/
+  end
+
   test "--no-create option skips assets to create new record" do
     run_generator %w(User --no_create)
 
