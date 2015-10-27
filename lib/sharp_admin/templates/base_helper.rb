@@ -1,4 +1,4 @@
-module Admin::BaseHelper
+module <%= options[:read_only].classify %>::BaseHelper
 
   def sortable(column, title = nil)
     title ||= column.titleize

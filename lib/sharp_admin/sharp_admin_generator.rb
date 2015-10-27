@@ -1,5 +1,4 @@
-require 'rails/generators/resource_helpers'
-require 'rails/generators/named_base'
+require 'rails/generators'
 
 class SharpAdminGenerator < Rails::Generators::NamedBase
 

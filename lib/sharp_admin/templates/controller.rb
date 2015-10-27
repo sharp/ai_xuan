@@ -1,4 +1,4 @@
-class Admin::<%= controller_class_name %>Controller < Admin::BaseController
+class <%= options[:read_only].classify %>::<%= controller_class_name %>Controller < <%= options[:read_only].classify %>::BaseController
 
   helper_method :sort_column, :sort_direction
 
