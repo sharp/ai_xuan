@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe <%= options[:read_only].classify %>::<%= controller_class_name %>Controller do
+describe <%= options[:ns].classify %>::<%= controller_class_name %>Controller do
 
   def mock_<%= singular_table_name %>(stubs={})
     (@mock_<%= singular_table_name %> ||= mock_model(<%= class_name %>).as_null_object).tap do |<%= singular_table_name %>|
