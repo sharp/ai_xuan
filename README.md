@@ -8,11 +8,14 @@ It works with Rails 4 and uses [ransack](https://github.com/activerecord-hackery
 
 Include it in your Gemfile:
 
-  gem "sharp_admin"
+``
+gem "sharp_admin"
+```
 
 Run the generator:
-
-  $ bundle exec rails g admin_view User --search_by name_or_email --ns=super_admin
+```
+bundle exec rails g admin_view User --search_by name_or_email --ns=super_admin
+```
 
 The `--search_by` option is not required. However, it's useful most of the time, and you can use any ransack-compatible expression to search in string or text fields.
 
@@ -21,6 +24,3 @@ Other options available are:
 * `--no_create` - omit functionality to create a new record
 * `--ns` - namespace for your admin, default is admin
 
-## License
-
-Copyright © 2011-2014 [Rendered Text](http://renderedtext.com). admin_view is free software, and may be redistributed under the terms specified in the MIT-LICENSE file.
