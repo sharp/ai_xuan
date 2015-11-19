@@ -3,7 +3,7 @@
 
 <% if options[:search_by].present? -%>
 = search_form_for @q, :url => <%= options[:ns] %>_<%= plural_table_name %>_path, :html => { :method => :get, :class => "well form-inline" } do |f|
-  .class="form-group
+  .class.form-group
     = f.text_field :<%= options[:search_by] %>_cont, :type => "search", :class => "form-control", :placeholder => "Search by <%= options[:search_by] %>"
 
   = f.submit "Search", :class => "btn btn-default"

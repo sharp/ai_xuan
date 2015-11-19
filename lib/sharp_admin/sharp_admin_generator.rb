@@ -50,7 +50,7 @@ class SharpAdminGenerator < Rails::Generators::NamedBase
 
   def add_resource_route
     return if not File.exists?("config/routes.rb")
-    route_config =  "namespace #{options[:ns].to_sym} do "
+    route_config =  "namespace :#{options[:ns]} do "
     route_config << "resources :#{file_name.pluralize}"
     route_config << " end"
     route route_config
