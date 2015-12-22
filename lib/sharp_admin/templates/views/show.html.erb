@@ -4,12 +4,12 @@
     = @<%= singular_table_name %>.id
 
 .table.table-bordered
-- @attributes.each do |attribute|
+<%- @attributes.each do |attribute| %>
   %tr
-    %td= attribute.human_name :
+    %td= <%= attribute.human_name %>:
     %td
       = @<%= singular_table_name %>.<%= attribute.name %>
-
+<% end %>
 - unless options[:read_only]
   %tr
     %td

@@ -8,7 +8,7 @@ It works with Rails 4 and uses [ransack](https://github.com/activerecord-hackery
 
 Include it in your Gemfile:
 
-``
+```
 gem "sharp_admin"
 ```
 
