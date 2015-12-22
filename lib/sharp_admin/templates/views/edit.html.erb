@@ -3,5 +3,5 @@
     Editing
     = link_to "<%= human_name.downcase %> #{@<%= singular_table_name %>.id}", admin_<%= singular_table_name %>_path(@<%= singular_table_name %>) %>
 
-= form_for [:admin, @<%= singular_table_name %>], :html => { :class => "form-horizontal", :role => "form" } do |f|
+= form_for [<%= options[:ns] %>, @<%= singular_table_name %>], :html => { :class => "form-horizontal", :role => "form" } do |f|
   = render "form", { :f => f }

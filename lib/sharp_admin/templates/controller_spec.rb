@@ -49,7 +49,7 @@ describe <%= options[:ns].classify %>::<%= controller_class_name %>Controller do
       it "redirects to the created <%= singular_table_name %>" do
         allow(<%= class_name %>).to receive(:new) { mock_<%= singular_table_name %>(:save => true) }
         post :create, :<%= singular_table_name %> => {}
-        expect(response).to redirect_to(admin_<%= plural_table_name %>_url)
+        expect(response).to redirect_to(<%= options[:ns] %>_<%= plural_table_name %>_url)
       end
     end
 
@@ -97,7 +97,7 @@ describe <%= options[:ns].classify %>::<%= controller_class_name %>Controller do
       it "redirects to the <%= singular_table_name %>" do
         allow(<%= class_name %>).to receive(:find) { mock_<%= singular_table_name %>(:update_attributes => true) }
         put :update, :id => "1"
-        expect(response).to redirect_to(admin_<%= plural_table_name %>_url)
+        expect(response).to redirect_to(<%= options[:ns] %>_<%= plural_table_name %>_url)
       end
     end
 
@@ -128,7 +128,7 @@ describe <%= options[:ns].classify %>::<%= controller_class_name %>Controller do
     it "redirects to the <%= plural_table_name %> list" do
       allow(<%= class_name %>).to receive(:find) { mock_<%= singular_table_name %> }
       delete :destroy, :id => "1"
-      expect(response).to redirect_to(admin_<%= plural_table_name %>_url)
+      expect(response).to redirect_to(<%= options[:ns] %>_<%= plural_table_name %>_url)
     end
   end
 
