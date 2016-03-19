@@ -31,10 +31,6 @@ class SharpAdminGenerator < Rails::Generators::NamedBase
     template "controller.rb", File.join("app/controllers/#{options[:ns]}", "#{controller_file_name}_controller.rb")
   end
 
-  def create_controller_rspec
-    template "controller_spec.rb", File.join("spec/controllers/#{options[:ns]}", "#{controller_file_name}_controller_spec.rb")
-  end
-
   def create_helper
     empty_directory "app/helpers/#{options[:ns]}"
     template "base_helper.rb", File.join("app/helpers/#{options[:ns]}", "base_helper.rb")

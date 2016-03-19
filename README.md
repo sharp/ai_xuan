@@ -14,7 +14,8 @@ gem "sharp_admin"
 
 Run the generator:
 ```
-bundle exec rails g admin_view User --search_by name_or_email --ns=super_admin
+rails g model model_name
+rails g admin_view model_name --search_by name_or_email --ns=super_admin
 ```
 
 The `--search_by` option is not required. However, it's useful most of the time, and you can use any ransack-compatible expression to search in string or text fields.

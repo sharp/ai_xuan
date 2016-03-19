@@ -17,7 +17,7 @@ class <%= options[:ns].classify %>::<%= controller_class_name %>Controller < <%=
   def create
     @<%= singular_table_name %> = <%= class_name %>.new(<%= singular_table_name %>_params)
     if @<%= singular_table_name %>.save
-      redirect_to admin_<%= plural_table_name %>_path, :notice => "Successfully created <%= human_name.downcase %>."
+      redirect_to <%= options[:ns] %>_<%= plural_table_name %>_path, :notice => "Successfully created <%= human_name.downcase %>."
     else
       render :new
     end
@@ -33,7 +33,7 @@ class <%= options[:ns].classify %>::<%= controller_class_name %>Controller < <%=
 
   def update
     if @<%= singular_table_name %>.update_attributes(<%= singular_table_name %>_params)
-      redirect_to admin_<%= plural_table_name %>_path, :notice => "Successfully updated <%= human_name.downcase %>."
+      redirect_to <%= options[:ns] %>_<%= plural_table_name %>_path, :notice => "Successfully updated <%= human_name.downcase %>."
     else
       render :edit
     end
@@ -42,7 +42,7 @@ class <%= options[:ns].classify %>::<%= controller_class_name %>Controller < <%=
 
   def destroy
     @<%= singular_table_name %>.destroy
-    redirect_to admin_<%= plural_table_name %>_path, :notice => "<%= human_name %> deleted."
+    redirect_to <%= options[:ns] %>_<%= plural_table_name %>_path, :notice => "<%= human_name %> deleted."
   end
 
   protected
