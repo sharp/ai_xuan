@@ -1,7 +1,7 @@
 %h3
   <%= human_name.pluralize %>
 
-<% if options[:search_by].present? -%>
+<%- if options[:search_by].present? -%>
 = search_form_for @q, :url => <%= options[:ns] %>_<%= plural_table_name %>_path, :html => { :method => :get, :class => "well form-inline" } do |f|
   .class.form-group
     = f.text_field :<%= options[:search_by] %>_cont, :type => "search", :class => "form-control", :placeholder => "Search by <%= options[:search_by] %>"
@@ -9,12 +9,12 @@
   = f.submit "Search", :class => "btn btn-default"
 <% end %>
 
-<% unless options[:no_create] || options[:read_only] %>
+<%- unless options[:no_create] || options[:read_only] %>
 %p
   = link_to("Create a new <%= human_name %>", new_<%= options[:ns] %>_<%= singular_table_name %>_path)
 <% end -%>
 
-%table.sortable.table.table-striped.table-bordered.table-condensed
+%table.sortable.table
   %thead
     %tr
 <% @attributes.each do |attribute| -%>

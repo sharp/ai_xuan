@@ -1,17 +1,12 @@
 - if @<%= singular_table_name %>.errors.any?
   %ul.errors
-    @<%= singular_table_name %>.errors.full_messages.each do |msg|
+    - @<%= singular_table_name %>.errors.full_messages.each do |msg|
       %li= msg
 
 <%- @attributes.each do |attribute| %>
   <% next if ["id", "created_at", "updated_at"].include?(attribute.name) -%>
-.form-group
-  = f.label :<%= attribute.name %>, :class => "col-sm-2 control-label"
-  .col-sm-4
-    = f.text_field :<%= attribute.name %>, :class => "form-control", :placeholder => "<%= attribute.name.capitalize %>"
+= f.input :<%= attribute.name %>, placeholder: "<%= attribute.name.capitalize %>"
 <% end %>
 
 - label = @<%= singular_table_name %>.new_record? ? "Create" : "Update"
-.form-group
-  .col-sm-offset-2 col-sm-4
-    = f.submit label, class: 'btn btn-default'
+= f.submit label, class: 'btn btn-default'

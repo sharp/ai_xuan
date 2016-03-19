@@ -2,14 +2,18 @@
 
 Code generator of CRUD admin controllers, views. It helps you get the data on screen immediately, so you can customize the specifics to your liking.
 
-It works with Rails 4 and uses [ransack](https://github.com/activerecord-hackery/ransack) for search and [kaminari](https://github.com/amatsuda/kaminari) for pagination.
+It works with Rails 4 and uses:
+
+[ransack](https://github.com/activerecord-hackery/ransack) for search
+[kaminari](https://github.com/amatsuda/kaminari) for pagination.
+[simple_form](https://github.com/plataformatec/simple_form)
 
 ## Usage
 
 Include it in your Gemfile:
 
 ```
-gem "sharp_admin", '1.1.1'
+gem "sharp_admin", '1.1.2'
 ```
 
 Run the generator:
