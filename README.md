@@ -2,11 +2,7 @@
 
 Code generator of CRUD admin controllers, views. It helps you get the data on screen immediately, so you can customize the specifics to your liking.
 
-It works with Rails 4 and uses:
-
-[ransack](https://github.com/activerecord-hackery/ransack) for search
-[kaminari](https://github.com/amatsuda/kaminari) for pagination.
-[simple_form](https://github.com/plataformatec/simple_form)
+It works with Rails 4 and uses: [ransack](https://github.com/activerecord-hackery/ransack) for search, [kaminari](https://github.com/amatsuda/kaminari) for pagination, [simple_form](https://github.com/plataformatec/simple_form) for form builder.
 
 ## Usage
 
