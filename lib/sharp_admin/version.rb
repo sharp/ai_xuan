@@ -1,3 +1,3 @@
-module EasyAdmin
-  VERSION = "1.1.2"
+module SharpAdmin
+  VERSION = "1.2"
 end
