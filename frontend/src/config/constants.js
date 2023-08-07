@@ -1,9 +1,5 @@
 export const MENU_OPTIONS = [
     {
-        label: '塔罗牌',
-        key: 'tarot',
-    },
-    {
         label: '传统算卦',
         key: 'birthday',
         children: [
@@ -30,18 +26,22 @@ export const MENU_OPTIONS = [
         ]
     },
     {
+        label: '塔罗牌',
+        key: 'tarot',
+    },
+    {
         label: '关于',
         key: 'about',
     }
 ];
 export const DIVINATION_OPTIONS = [
     {
-        label: '塔罗牌',
-        key: 'tarot',
-    },
-    {
         label: '生辰八字',
         key: 'birthday',
+    },
+    {
+        label: '塔罗牌',
+        key: 'tarot',
     },
     {
         label: '起名',

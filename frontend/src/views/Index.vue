@@ -8,7 +8,7 @@ import { useStorage } from '@vueuse/core'
 const state_jwt = useStorage('jwt')
 const prompt = ref("");
 const result = ref("");
-const prompt_type = ref("tarot");
+const prompt_type = ref("birthday");
 const menu_type = ref("divination");
 const lunarBirthday = ref('龙年 庚辰年 七月十八 巨蟹座')
 const birthday = ref("2000-08-17 00:00:00");
