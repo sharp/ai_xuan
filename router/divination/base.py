@@ -22,5 +22,5 @@ class DivinationFactory(metaclass=MetaDivination):
             return
         return cls()
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         return '', ''

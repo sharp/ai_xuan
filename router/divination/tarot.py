@@ -15,7 +15,7 @@ class TarotFactory(DivinationFactory):
 
     divination_type = "tarot"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         if len(divination_body.prompt) > 40:
             raise HTTPException(status_code=400, detail="Prompt too long")
         return divination_body.prompt, TAROT_PROMPT

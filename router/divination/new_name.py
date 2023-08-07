@@ -15,7 +15,7 @@ class NewNameFactory(DivinationFactory):
 
     divination_type = "new_name"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         if (not divination_body.new_name or not all([
             divination_body.new_name.surname,
             divination_body.new_name.birthday,

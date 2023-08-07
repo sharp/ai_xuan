@@ -12,9 +12,8 @@ python-multipart = "==0.0.6"
 slowapi = "==0.1.8"
 sxtwl = "==2.0.6"
 pyjwt = "==2.7.0"
-uvicorn = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.7"
+python_version = "3.8"

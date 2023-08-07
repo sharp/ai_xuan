@@ -11,7 +11,7 @@ class PlumFlowerFactory(DivinationFactory):
 
     divination_type = "plum_flower"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         if not divination_body.plum_flower:
             raise HTTPException(status_code=400, detail="No plum_flower")
         prompt = f"我选择的数字是: {divination_body.plum_flower.num1} 和 {divination_body.plum_flower.num2}"

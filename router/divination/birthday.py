@@ -12,7 +12,7 @@ class BirthdayFactory(DivinationFactory):
 
     divination_type = "birthday"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         birthday = datetime.datetime.strptime(
             divination_body.birthday, '%Y-%m-%d %H:%M:%S'
         )

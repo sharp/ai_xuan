@@ -11,7 +11,7 @@ class DreamFactory(DivinationFactory):
 
     divination_type = "dream"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         if len(divination_body.prompt) > 40:
             raise HTTPException(status_code=400, detail="Prompt too long")
         prompt = f"我的梦境是: {divination_body.prompt}"

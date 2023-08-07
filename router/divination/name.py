@@ -12,7 +12,7 @@ class NameFactory(DivinationFactory):
 
     divination_type = "name"
 
-    def build_prompt(self, divination_body: DivinationBody) -> tuple[str, str]:
+    def build_prompt(self, divination_body: DivinationBody):
         if len(divination_body.prompt) > 10 or len(divination_body.prompt) < 1:
             raise HTTPException(status_code=400, detail="姓名长度错误")
         prompt = f"我的名字是{divination_body.prompt}"
