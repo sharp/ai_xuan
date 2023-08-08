@@ -73,7 +73,7 @@ watch(birthday, async (newBirthday, oldBirthday) => {
 </script>
 
 <template>
-  <n-spin size="large" description="正在占卜..." :show="loading">
+  <n-spin size="large" description="大约需要30秒" :show="loading">
     <n-menu v-model:value="prompt_type" mode="horizontal" :options="MENU_OPTIONS" />
     <n-card v-if="prompt_type != 'about'">
       <div style="display: inline-block;">
