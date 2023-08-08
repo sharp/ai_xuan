@@ -65,6 +65,7 @@ watch(birthday, async (newBirthday, oldBirthday) => {
   lunarBirthday.value = '转换中...'
   try {
     const res = await fetch(`${API_BASE}/api/date?date=${newBirthday}`)
+    console.log('%c [ res ]-68', 'font-size:13px; background:#a593d6; color:#e9d7ff;', res)
     lunarBirthday.value = await res.json()
   } catch (error) {
     console.error(error)
