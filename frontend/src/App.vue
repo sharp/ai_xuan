@@ -31,21 +31,13 @@ const fetchSettings = async () => {
 
 onMounted(async () => {
   fetchSettings();
-  (window.adsbygoogle = window.adsbygoogle || []).push({});
-  (window.adsbygoogle = window.adsbygoogle || []).push({});
 });
 </script>
 
 <template>
   <n-message-provider>
-    <n-grid x-gap="12" :cols="6">
-      <n-gi>
-        <div class="side">
-          <ins class="adsbygoogle" style="display:block" :data-ad-client="settings.ad_client"
-            :data-ad-slot="settings.ad_slot" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
-      </n-gi>
-      <n-gi span="4">
+    <n-grid x-gap="12" :cols="6" y-gap="12">
+      <n-gi span="12">
         <div class="main">
           <n-space vertical>
             <h2>All in AI</h2>
@@ -68,23 +60,13 @@ onMounted(async () => {
           </n-space>
         </div>
       </n-gi>
-      <n-gi>
-        <div class="side">
-          <ins class="adsbygoogle" style="display:block" :data-ad-client="settings.ad_client"
-            :data-ad-slot="settings.ad_slot" data-ad-format="auto" data-full-width-responsive="true"></ins>
-        </div>
-      </n-gi>
     </n-grid>
   </n-message-provider>
 </template>
 
 <style scoped>
-.side {
-  height: 100vh;
-}
 
 .main {
-  height: 100vh;
   text-align: center;
 }
 

@@ -156,8 +156,11 @@ watch(birthday, async (newBirthday, oldBirthday) => {
   text-align: center;
   margin-bottom: 12px;
 }
-
+.n-card {
+  margin-bottom: 10px;
+}
 .result {
+  padding: 30px 0;
   text-align: left;
 }
 </style>
